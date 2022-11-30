@@ -26,7 +26,7 @@ author = 'Zan Yuan'
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.1.dev121+g213'
+release = '0.1'
 
 
 # -- General configuration ---------------------------------------------------

@@ -6,8 +6,14 @@ import pandas as pd
 import sys
 
 
-def genesets2GeneSig(df):
-    # for aucell 
+def genesets2GeneSig(df) -> Sequence[Type[GeneSignature]]:
+    """
+    Conver dataframe to GeneSig for AUCell. 
+
+    :param df: A dataframe with columns ["name", "member", "description"].
+    :return: GeneSignature list.
+    """
+
     names = list(df["name"].unique())
     GeneSigs = [0]*len(names)
     
