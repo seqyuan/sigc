@@ -6,15 +6,15 @@ Documentation
 
 sigc
 =============
--------------
+#-------------
 
-.. automodule:: sigc.sigc
-  :members:
+# .. automodule:: sigc.sigc
+#  :members:
 
 
-genesets2GeneSig
-**************
+# genesets2GeneSig
+# **************
 
-.. automodule:: sigc.genesets2GeneSig
-  :members:
+#.. automodule:: sigc.genesets2GeneSig
+#  :members:
 
