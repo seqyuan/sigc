@@ -7,7 +7,7 @@ except DistributionNotFound:
 
 from sigc.core import (
     genesets2GeneSig,
-	metabolism_sigs
+	metabolism_sigs,
     sigc_score
 )
 
