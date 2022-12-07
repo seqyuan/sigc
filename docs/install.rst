@@ -1,7 +1,7 @@
 .. _install:
 
 *******
-Install
+install sigc
 *******
 
 Regular install

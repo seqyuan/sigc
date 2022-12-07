@@ -88,6 +88,12 @@ html_theme = 'sphinx_book_theme'
 # documentation.
 #
 # html_theme_options = {}
+html_logo = 'images/sigc_logo.png'
+html_theme_options = {
+    'logo_only': True,
+    'display_version': False,
+}
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
