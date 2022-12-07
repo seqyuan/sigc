@@ -31,7 +31,7 @@ def KEGG_metabolism() -> pd.DataFrame:
     """
     Get a set of default metabolism signature from KEGG. 
     """
-    df = gmt_to_dataframe('../../resources/KEGG_metabolism_nc.gmt')
+    df = gmt_to_dataframe('./resources/KEGG_metabolism_nc.gmt')
     GeneSigs = genesets2GeneSig(df)
     return GeneSigs
 
@@ -39,7 +39,7 @@ def REACTOME_metabolism() -> pd.DataFrame:
     """
     Get a set of default metabolism signature from REACTOME. 
     """
-    df = gmt_to_dataframe('../../resources/REACTOME_metabolism.gmt')
+    df = gmt_to_dataframe('./resources/REACTOME_metabolism.gmt')
     GeneSigs = genesets2GeneSig(df)
     return GeneSigs
 
