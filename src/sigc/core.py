@@ -3,8 +3,8 @@ from typing import Sequence, Type
 from ctxcore.genesig import GeneSignature
 from GSVA import gsva, gmt_to_dataframe
 import pandas as pd
-import sys
-
+import os,sys
+basedir = os.path.abspath(os.path.dirname(sys.argv[0]))
 
 def genesets2GeneSig(df: pd.DataFrame) -> Sequence[Type[GeneSignature]]:
     """
@@ -31,7 +31,7 @@ def KEGG_metabolism() -> pd.DataFrame:
     """
     Get a set of default metabolism signature from KEGG. 
     """
-    df = gmt_to_dataframe('./resources/KEGG_metabolism_nc.gmt')
+    df = gmt_to_dataframe(os.path.join(basedir, 'resources', 'KEGG_metabolism_nc.gmt')
     GeneSigs = genesets2GeneSig(df)
     return GeneSigs
 
@@ -39,7 +39,7 @@ def REACTOME_metabolism() -> pd.DataFrame:
     """
     Get a set of default metabolism signature from REACTOME. 
     """
-    df = gmt_to_dataframe('./resources/REACTOME_metabolism.gmt')
+    df = gmt_to_dataframe(os.path.join(basedir, 'resources', 'REACTOME_metabolism.gmt'))
     GeneSigs = genesets2GeneSig(df)
     return GeneSigs
 
