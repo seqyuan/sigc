@@ -10,7 +10,7 @@ sigc+ is a python package to build gene signature score for gene expression matr
 
 .. toctree::
    :caption: Contents:
-   :maxdepth: 1
+   :maxdepth: 3
 
    install
    autodoc

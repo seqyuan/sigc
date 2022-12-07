@@ -15,11 +15,11 @@ To install sigc run:
     cd sigc
     pip install .
 
-Depending on your pip version, you may need to run this pip command instead:
+run this pip command to specify the version and installation source:
 
 .. code-block:: bash
 
-    pip install -e .
+    pip install -i https://pypi.org/simple sigc==0.1.6
 
 Checking version
 ================

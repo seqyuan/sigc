@@ -9,13 +9,13 @@ from sigc.core import (
     genesets2GeneSig,
     KEGG_metabolism,
     REACTOME_metabolism,
-    sigc_sigc
+    sigc_score
 )
 
 __all__ = [
     "genesets2GeneSig",
     "KEGG_metabolism",
     "REACTOME_metabolism",
-    "sigc_sigc"
+    "sigc_score"
 ]
 
