@@ -6,11 +6,15 @@ import pandas as pd
 import sys
 
 
-def genesets2GeneSig(df) -> Sequence[Type[GeneSignature]]:
+def genesets2GeneSig(df: pd.DataFrame) -> Sequence[Type[GeneSignature]]:
     """
     Conver dataframe to GeneSig for AUCell. 
 
     :param df: A dataframe with columns ["name", "member", "description"].
+               name        member     description
+               signature1  gene1      signature1 description
+               signature1  gene2      signature1 description
+               signature2  gene4      signature2 description
     :return: GeneSignature list.
     """
 
@@ -23,12 +27,18 @@ def genesets2GeneSig(df) -> Sequence[Type[GeneSignature]]:
         
     return(GeneSigs)
 
-def KEGG_metabolism():
+def KEGG_metabolism() -> pd.DataFrame:
+    """
+    Get a set of default metabolism signature from KEGG. 
+    """
     df = gmt_to_dataframe('../../resources/KEGG_metabolism_nc.gmt')
     GeneSigs = genesets2GeneSig(df)
     return GeneSigs
 
-def REACTOME_metabolism():
+def REACTOME_metabolism() -> pd.DataFrame:
+    """
+    Get a set of default metabolism signature from REACTOME. 
+    """
     df = gmt_to_dataframe('../../resources/REACTOME_metabolism.gmt')
     GeneSigs = genesets2GeneSig(df)
     return GeneSigs
@@ -44,16 +54,21 @@ def sigc_auc(gene_exp, GeneSigs: Sequence[Type[GeneSignature]], num_workers=4):
 
     return auc_mxt
 
-def sigc(ex_mtx: pd.DataFrame, GeneSigs: pd.DataFrame, method="AUCell", num_workers=4) -> pd.DataFrame:
+def sigc_score(ex_mtx: pd.DataFrame, GeneSigs: pd.DataFrame, method="AUCell", num_workers=4) -> pd.DataFrame:
     """
     Get a set of signature score of a given gene expression matrix. 
 
-    :param ex_mtx: The expression profile matrix. The rows should correspond to different cells, the columns to different
-        genes (n_cells x n_genes).
+    :param ex_mtx: The expression profile matrix. 
+                   The rows should correspond to different cells, 
+                   the columns to different genes (n_cells x n_genes).
     :param GeneSigs: A dataframe with columns ["name", "member", "description"].
+                       name        member     description
+                       signature1  gene1      signature1 description
+                       signature1  gene2      signature1 description
+                       signature2  gene4      signature2 description
     :param method: sinature score method [AUCell, GSVA, ssGSEA, ...] (default: AUCell).
     :param num_workers: The number of cores to use in AUCell method (default: 4).
-    :return: A dataframe with the sigcs (n_cells x n_signatures).
+    :return: A dataframe with cell signature score (n_cells x n_signatures).
     """
 
     sig_score_mat = pd.DataFrame()
