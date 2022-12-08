@@ -20,7 +20,7 @@ setuptools.setup(
      author="Zan Yuan",
      author_email="yfinddream@gmail.com",
      description="gene signature score for gene expression matrix",
-     long_description=open('README.md').read(),
+     long_description=open('README.rst').read(),
      url="https://github.com/seqyuan/sigc",
      classifiers=[
          "Programming Language :: Python :: 3",
