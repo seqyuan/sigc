@@ -1,9 +1,9 @@
 from pkg_resources import get_distribution, DistributionNotFound
 
-try:
-    __version__ = get_distribution("sigc").version
-except DistributionNotFound:
-    pass
+#try:
+#    __version__ = get_distribution("sigc").version
+#except DistributionNotFound:
+#    pass
 
 from sigc.core import (
     genesets2GeneSig,
