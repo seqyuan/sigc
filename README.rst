@@ -36,7 +36,5 @@ Glycolysis2    describ2     geneX
 Documentation
 ==================
 
-Extensive documentation and tutorials are available at read_the_docs_
-.. _read_the_docs: https://sigc.readthedocs.io/
-
+Extensive documentation and tutorials are available at https://sigc.readthedocs.io
 
