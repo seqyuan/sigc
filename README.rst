@@ -1,3 +1,6 @@
+.. image:: https://zenodo.org/badge/572302042.svg
+   :target: https://zenodo.org/badge/latestdoi/572302042
+
 sigc
 
 install
