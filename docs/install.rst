@@ -11,15 +11,13 @@ To install sigc run:
 
 .. code-block:: bash
 
-    git clone https://github.com/seqyuan/sigc
-    cd sigc
-    pip install .
+    pip install sigc
 
 run this pip command to specify the version and installation source:
 
 .. code-block:: bash
 
-    pip install -i https://pypi.org/simple sigc==0.1.16
+    pip install -i https://pypi.org/simple sigc==0.1.17
 
 Checking version
 ================

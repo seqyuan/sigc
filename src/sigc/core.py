@@ -4,7 +4,7 @@ from ctxcore.genesig import GeneSignature
 from GSVA import gsva, gmt_to_dataframe
 import pandas as pd
 import os,sys
-basedir = os.path.abspath(os.path.dirname(sys.argv[0]))
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 def genesets2GeneSig(df: pd.DataFrame) -> Sequence[Type[GeneSignature]]:
     """
@@ -35,7 +35,7 @@ def metabolism_sigs(resources="KEGG") -> pd.DataFrame:
     file = "KEGG_metabolism_nc.gmt"
     if resources=="REACTOME":
         file = "REACTOME_metabolism.gmt"
-    df = gmt_to_dataframe(os.path.join(basedir,'sigc', 'resources', file))
+    df = gmt_to_dataframe(os.path.join(basedir,'resources', file))
 
     return df
 

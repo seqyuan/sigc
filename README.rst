@@ -15,7 +15,7 @@ core usage
 	import sigc
 
 	kegg_metabolism = sigc.metabolism_sigs(resources='KEGG')
-	# other custom also support
+	# other custom signature gene sets also support
 
 	df = pd.read_table("cells_X_genes.mat", header=0, index_col=0)
 
@@ -25,11 +25,18 @@ core usage
 signature example
 ==================
 
-=== =========== ============ =======
-    name        description  member
-=== =========== ============ =======
-0   Glycolysis  00010        HK3
-1   Glycolysis  00010        HK1
-2   Glycolysis2 describ2     geneX 
-=== =========== ============ =======
+============== ============ =======
+name           description  member
+============== ============ =======
+Glycolysis     00010        HK3
+Glycolysis     00010        HK1
+Glycolysis2    describ2     geneX 
+============== ============ =======
+
+Documentation
+==================
+
+Extensive documentation and tutorials are available at read_the_docs_
+.. _read_the_docs: https://sigc.readthedocs.io/
+
 

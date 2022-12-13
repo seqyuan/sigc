@@ -13,7 +13,8 @@ Basic sigc analysis
 
 .. toctree::
     :hidden:
-    :maxdepth: 2
+    :maxdepth: 3
     
     sigc_main.ipynb
     seurat2scanpy.ipynb
+	h5ad_ID2symbol.ipynb
