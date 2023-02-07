@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'sigc'
-copyright = 'Zan Yuan'
+copyright = 'seqyuan'
 author = 'Zan Yuan'
 
 # The short X.Y version
@@ -28,7 +28,7 @@ version = '0.1.1'
 # The full version, including alpha/beta/rc tags
 release = '0.1.1'
 
-
+repository_url = 'https://github.com/seqyuan/sigc'
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -44,7 +44,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
     'nbsphinx',
-    'nbsphinx_link'
+    'nbsphinx_link',
+    "IPython.sphinxext.ipython_console_highlighting",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -72,7 +73,7 @@ language = None
 exclude_patterns = ['Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
+pygments_style = "default"
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -91,7 +92,9 @@ html_theme = 'sphinx_book_theme'
 html_logo = 'images/sigc_logo.png'
 html_theme_options = {
     'logo_only': True,
-    'display_version': False,
+    'display_version': True,
+    "repository_url": repository_url,
+    "use_repository_button": True,
 }
 
 
