@@ -42,6 +42,7 @@ def metabolism_sigs(resources="KEGG") -> pd.DataFrame:
 def sigc_auc(
 		gene_exp, 
 		GeneSigsDf: pd.DataFrame, 
+        auc_threshold: float=0.05,
 		num_workers=4) -> pd.DataFrame:
 
     GeneSigs = genesets2GeneSig(GeneSigsDf)
@@ -49,7 +50,7 @@ def sigc_auc(
     auc_mxt = aucell4r(
         gene_exp,
         GeneSigs,
-        0.05,
+        auc_threshold=auc_threshold,
         noweights=False,
         normalize=False,
         num_workers=num_workers)
@@ -60,6 +61,7 @@ def sigc_score(
 		ex_mtx: pd.DataFrame, 
 		GeneSigs: pd.DataFrame, 
 		method="AUCell", 
+        threshold: float=0.05,
 		num_workers=4) -> pd.DataFrame:
     """
     Get a set of signature score of a given gene expression matrix. 
@@ -73,13 +75,16 @@ def sigc_score(
                        signature1  gene2      signature1 description
                        signature2  gene4      signature2 description
     :param method: sinature score method [AUCell, GSVA, ssGSEA, ...] (default: AUCell).
+    :param threshold: if ``method`` param select ``AUCell`` then threshold means:
+        The fraction of the ranked genome to take into account for the calculation of the
+        Area Under the recovery Curve.
     :param num_workers: The number of cores to use in AUCell method (default: 4).
     :return: A dataframe with cell signature score (n_cells x n_signatures).
     """
 
     sig_score_mat = pd.DataFrame()
     if method == "AUCell":
-        sig_score_mat = sigc_auc(ex_mtx, GeneSigs, num_workers=num_workers)
+        sig_score_mat = sigc_auc(ex_mtx, GeneSigs, auc_threshold=threshold, num_workers=num_workers)
     else:
         sys.stderr("Method {0} not support!".format(method))
         sys.exit(1)

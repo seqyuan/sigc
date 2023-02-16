@@ -121,6 +121,7 @@ htmlhelp_basename = 'sigcdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
+latex_engine = 'pdflatex'
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
@@ -145,7 +146,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'sigc.tex', 'sigc Documentation',
-     'Zzn Yuan', 'manual'),
+     'Zan Yuan', 'manual'),
 ]
 
 

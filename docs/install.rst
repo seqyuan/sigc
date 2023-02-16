@@ -17,7 +17,7 @@ run this pip command to specify the version and installation source:
 
 .. code-block:: bash
 
-    pip install -i https://pypi.org/simple sigc==0.1.17
+    pip install -i https://pypi.org/simple sigc==0.1.18
 
 Checking version
 ================
